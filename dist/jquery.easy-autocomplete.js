@@ -1109,7 +1109,7 @@ var EasyAutocomplete = (function (scope) {
 
 								var listData = listBuilders[builderIndex].data;
 
-								if (typeof listData === "undefined") {
+								if (typeof listData === undefined) {
 									continue;
 								}
 
