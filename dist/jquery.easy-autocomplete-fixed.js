@@ -98,7 +98,10 @@ var EasyAutocomplete = (function (scope) {
 				onShowListEvent: function () {
 				},
 				onHideListEvent: function () {
-				}
+				},
+				onFailEvent: function () {
+					console.warn('WARNING: EasyAutocomplete failed to load response data');
+				},
 			},
 
 			highlightPhrase: true,
@@ -1394,7 +1397,7 @@ var EasyAutocomplete = (function (scope) {
 
 									})
 									.fail(function () {
-										logger.warning('Fail to load response data');
+										config.get('list').onFailEvent();
 									})
 									.always(function () {
 
